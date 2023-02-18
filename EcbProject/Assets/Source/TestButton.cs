@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TestButton : MonoBehaviour
 {
+
+   public GameObject Hpbar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +21,11 @@ public class TestButton : MonoBehaviour
 
     public void clickButton()
     {
-
         // 커밋 테스트
         Debug.Log("테스트 버튼 클릭 이벤트");
+        Hpbar.GetComponent<HpBar>().TakeDamage(10);
+        
+
     }
 
 }
