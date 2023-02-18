@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a6b941d5861e27846b14b905ab4e28c2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 155981
+  packageName: Best HTTP/2
+  packageVersion: 2.7.0
+  assetPath: Assets/Best HTTP/Source/SecureProtocol/math/ec/multiplier/NafL2RMultiplier.cs
+  uploadId: 521915

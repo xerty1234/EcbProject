@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 44fabc8f92d114147b94a895ef74ca4e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 155981
+  packageName: Best HTTP/2
+  packageVersion: 2.7.0
+  assetPath: Assets/Best HTTP/Source/SecureProtocol/util/collections/UnmodifiableDictionary.cs
+  uploadId: 521915
