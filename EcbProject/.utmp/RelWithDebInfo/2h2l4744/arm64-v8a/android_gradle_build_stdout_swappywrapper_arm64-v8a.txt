@@ -1,0 +1,3 @@
+ninja: Entering directory `C:\Unity\EcbProject\GitHub\EcbProject\.utmp\RelWithDebInfo\2h2l4744\arm64-v8a'
+[1/2] Building CXX object FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o
+[2/2] Linking CXX shared library C:\Unity\EcbProject\GitHub\EcbProject\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\2h2l4744\obj\arm64-v8a\libswappywrapper.so
