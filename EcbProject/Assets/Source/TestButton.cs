@@ -6,6 +6,16 @@ public class TestButton : MonoBehaviour
 {
 
    public GameObject Hpbar;
+   public GameObject ksManager;
+   public GameObject SentenceManager;
+
+      class Sentence 
+    {
+        public string strEngSentence;
+        public string strKorSentence; 
+    }
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +32,21 @@ public class TestButton : MonoBehaviour
     public void clickButton()
     {
         // 커밋 테스트
-        Debug.Log("테스트 버튼 클릭 이벤트");
-        Hpbar.GetComponent<HpBar>().TakeDamage(10);
+        //Debug.Log("테스트 버튼 클릭 이벤트");
+        //Hpbar.GetComponent<HpBar>().TakeDamage(10);
+        /*
+            GameObject myGameObject = GameObject.Find("gameObjSentManager");
+            SentManager myDict = myGameObject.GetComponent<SentManager>();
+            List<SentManager.Sentence> myList = myDict.getSentence();
+        */
+        List<SentManager.Sentence> myList = GameObject.Find("gameObjSentManager").GetComponent<SentManager>().getSentence();
+
+
+        Debug.Log("strEngSentence: " + myList[0].strEngSentence);
+        Debug.Log("strKorSentence: " + myList[0].strKorSentence);
+
         
+        ksManager.GetComponent<KsManager>().setttingKs(myList[0].strKorSentence);
 
     }
 
