@@ -1,0 +1,1 @@
+234 object(s) was successfully exported to: /Volumes/CalDigit T4R 4TB/Projects/Unity/PROJECTS/UNITY/Foriero Store/Assets/Foriero Store/Projects/Characters/children_vol_1/sprites/children@4x
