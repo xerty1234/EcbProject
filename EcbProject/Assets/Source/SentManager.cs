@@ -34,35 +34,44 @@ public class SentManager : MonoBehaviour
     {
 
         Sentence temp = new Sentence();
-        temp.strEngSentence = "How have ypu been?"; temp.strKorSentence = "그동안 어떻게 지냈어?";
+        temp.strEngSentence = "How have you been?"; temp.strKorSentence = "그동안 어떻게 지냈어?";
         myDict.Add(temp);
+        
+        Sentence temp2= new Sentence();
+        temp2.strEngSentence = "Can not complain"; temp2.strKorSentence = "그럭저럭 지냈어";
+        myDict.Add(temp2);
 
-        temp.strEngSentence = "Can not complain"; temp.strKorSentence = "그럭저럭 지냈어";
-        myDict.Add(temp);
+        Sentence temp3= new Sentence();
+        temp3.strEngSentence = "Same as usual"; temp3.strKorSentence = "늘 똑같지 뭐";    
+        myDict.Add(temp3);
 
-        temp.strEngSentence = "Same as usual"; temp.strKorSentence = "늘 똑같지 뭐";    
-        myDict.Add(temp);
+        Sentence temp4 = new Sentence();
+        temp4.strEngSentence = "have not changed a bit"; temp4.strKorSentence = "하나도 안 변했다";    
+        myDict.Add(temp4);
+     
+        Sentence temp5 = new Sentence();
+        temp5.strEngSentence = "Really? You have changed a lot"; temp5.strKorSentence = "정말? 넌 정말 많이 변했는데";
+        myDict.Add(temp5);
 
-        temp.strEngSentence = "have not changed a bit"; temp.strKorSentence = "하나도 안 변했다";    
-        myDict.Add(temp);
+        Sentence temp6 = new Sentence();
+        temp6.strEngSentence = "I have to go now"; temp6.strKorSentence = "이제 가 봐야겠어요";
+        myDict.Add(temp6);
 
-        temp.strEngSentence = "Really? You have changed a lot"; temp.strKorSentence = "정말? 넌 정말 많이 변했는데";
-        myDict.Add(temp);
+        Sentence temp7 = new Sentence();
+        temp7.strEngSentence = "Say hello to your father."; temp7.strKorSentence = "아버지께 안부 전해주세요";
+        myDict.Add(temp7);
 
-        temp.strEngSentence = "I have to go now"; temp.strKorSentence = "이제 가 봐야겠어요";
-        myDict.Add(temp);
+        Sentence temp8 = new Sentence();
+        temp8.strEngSentence = "See you around"; temp8.strKorSentence = "나중에 봐요";
+        myDict.Add(temp8);
 
-        temp.strEngSentence = "Say hello to your father."; temp.strKorSentence = "아버지께 안부 전해주세요";
-        myDict.Add(temp);
+        Sentence temp9 = new Sentence();
+        temp9.strEngSentence = "Nice meeting you"; temp9.strKorSentence = "만나서 반가웠어";
+        myDict.Add(temp9);
 
-        temp.strEngSentence = "See you around"; temp.strKorSentence = "나중에 봐요";
-        myDict.Add(temp);
-
-        temp.strEngSentence = "Nice meeting you"; temp.strKorSentence = "만나서 반가웠어";
-        myDict.Add(temp);
-
-        temp.strEngSentence = "Hope to see you again"; temp.strKorSentence = "또 봤으면 좋겠다.";
-        myDict.Add(temp);
+        Sentence temp10 = new Sentence();
+        temp10.strEngSentence = "Hope to see you again"; temp10.strKorSentence = "또 봤으면 좋겠다.";
+        myDict.Add(temp10);
     }
 
 
