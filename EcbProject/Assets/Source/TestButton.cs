@@ -6,10 +6,12 @@ public class TestButton : MonoBehaviour
 {
 
    public GameObject Hpbar;
-<<<<<<< HEAD
-=======
    public GameObject ksManager;
    public GameObject SentenceManager;
+
+    
+    int iListSize = 0;
+    List<SentManager.Sentence> myList;
 
       class Sentence 
     {
@@ -17,8 +19,6 @@ public class TestButton : MonoBehaviour
         public string strKorSentence; 
     }
 
-
->>>>>>> LTS
 
     // Start is called before the first frame update
     void Start()
@@ -34,29 +34,28 @@ public class TestButton : MonoBehaviour
 
     public void clickButton()
     {
-        // 커밋 테스트
-<<<<<<< HEAD
-        Debug.Log("테스트 버튼 클릭 이벤트");
-        Hpbar.GetComponent<HpBar>().TakeDamage(10);
-        
-=======
-        //Debug.Log("테스트 버튼 클릭 이벤트");
-        //Hpbar.GetComponent<HpBar>().TakeDamage(10);
-        /*
-            GameObject myGameObject = GameObject.Find("gameObjSentManager");
-            SentManager myDict = myGameObject.GetComponent<SentManager>();
-            List<SentManager.Sentence> myList = myDict.getSentence();
-        */
-        List<SentManager.Sentence> myList = GameObject.Find("gameObjSentManager").GetComponent<SentManager>().getSentence();
+    
+        settingSentence(); 
 
-
-        Debug.Log("strEngSentence: " + myList[0].strEngSentence);
-        Debug.Log("strKorSentence: " + myList[0].strKorSentence);
-
-        
         ksManager.GetComponent<KsManager>().setttingKs(myList[0].strKorSentence);
->>>>>>> LTS
+        ksManager.GetComponent<KsManager>().settingWord(myList[0].strEngSentence);
 
+        myList.RemoveAt(0);
+        iListSize = myList.Count;
+        
+       
     }
+
+    public void settingSentence () 
+    {
+        if(iListSize <= 0) 
+        {
+            myList = new List<SentManager.Sentence> (GameObject.Find("gameObjSentManager").GetComponent<SentManager>().getSentence());
+            iListSize = myList.Count;
+        }   
+    }
+
+
+
 
 }
