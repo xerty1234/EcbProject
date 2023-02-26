@@ -80,11 +80,19 @@ public class KsManager : MonoBehaviour
         int iCorrectIndex = Random.Range(0, 3);
 
         List<TextMeshProUGUI> arrbuttonTextMeshs = new List<TextMeshProUGUI>();
+
+        List<GameObject> arrGameObject = new List<GameObject>();
         
         arrbuttonTextMeshs.Add(button1.transform.Find("WordText").GetComponent<TextMeshProUGUI>());
         arrbuttonTextMeshs.Add(button2.transform.Find("WordText").GetComponent<TextMeshProUGUI>());
         arrbuttonTextMeshs.Add(button3.transform.Find("WordText").GetComponent<TextMeshProUGUI>());
+
+        arrGameObject.Add(button1);
+        arrGameObject.Add(button2);
+        arrGameObject.Add(button3);
        
+        
+
         string [] strWrong = {"I","have","usual","changed","now"};
 
         for (int i=0; i<arrbuttonTextMeshs.Count; i++)
@@ -92,6 +100,7 @@ public class KsManager : MonoBehaviour
             if(i == iCorrectIndex) 
             {
                 arrbuttonTextMeshs[i].text = "" + (i+1) + "." + correctText;
+                arrGameObject[i].GetComponent<WordButton>().setQuestion("정답");
             }
             else 
             {
@@ -102,40 +111,25 @@ public class KsManager : MonoBehaviour
                     if(iRandomIndex < strWrong.Length)
                     {
                         arrbuttonTextMeshs[i].text = "" + (i+1) + "." + strWrong[iRandomIndex+1];
+                        arrGameObject[i].GetComponent<WordButton>().setQuestion("오답");
                     }
                     else 
                     {
                         arrbuttonTextMeshs[i].text = "" + (i+1) + "." + strWrong[iRandomIndex-1];
+                        arrGameObject[i].GetComponent<WordButton>().setQuestion("오답");
                     }                        
                 }
                 else
                 {
                     arrbuttonTextMeshs[i].text = "" + (i+1) + "." + strWrong[iRandomIndex];
+                    arrGameObject[i].GetComponent<WordButton>().setQuestion("오답");
                 }
                 
             }
 
         }
 
-        /*
-        if(iCorrectIndex == 1) 
-        {
-                buttonTextMesh1.text = "1." + correctText;
-        }
-        else if (iCorrectIndex == 2)
-        {
-                buttonTextMesh2.text = "2." + correctText;
-        } 
-        else if (iCorrectIndex == 3)
-        {
-                buttonTextMesh3.text = "3." + correctText;
-        }
-
-        buttonTextMesh1.text = "1." + correctText;
-        buttonTextMesh2.text = "2." + correctText;
-        buttonTextMesh3.text = "3." + correctText;
-        */
-
+      
 
     }
 
