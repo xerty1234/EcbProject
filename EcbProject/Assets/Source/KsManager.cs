@@ -16,6 +16,13 @@ public class KsManager : MonoBehaviour
      public GameObject button2;
      public GameObject button3;
 
+     public GameObject EmpHpBar; 
+
+
+     string [] arrStrs;
+
+     int iStrIndex;
+
     // Start is called before the first frame update
     void Start()
     {      
@@ -54,21 +61,34 @@ public class KsManager : MonoBehaviour
     
     public void settingWord (string text)
     {
-        string [] arrStrs = text.Split(' ');
+        arrStrs = text.Split(' ');
+        iStrIndex = 0;
+        
         for(int i= 0; i<arrStrs.Length; i++)
         {
             Debug.Log("arrStrs["+i+"] " + arrStrs[i]);
         }
 
         settingWordBuutonText(arrStrs[0]);
-        /*
-        for (int i=0; i<3; i++) 
-        {
-            createWordButton(550 , 650 - (i*150) , arrStrs[i]);
-        }
-        */
-       
+        iStrIndex++;
+        
+    }
 
+    public void nextWord()
+    {
+        Debug.Log("arrStrs.Length: " + arrStrs.Length);
+        Debug.Log("iStrIndex: " + iStrIndex);
+
+        if(arrStrs.Length == iStrIndex) 
+        {
+            EmpHpBar.GetComponent<HpBar>().TakeDamage(10);
+            GameObject.Find("TestButton").GetComponent<TestButton>().clickButton();
+        }
+        else 
+        {
+            settingWordBuutonText(arrStrs[iStrIndex]);
+            iStrIndex++;
+        }
     }
 
 

@@ -72,6 +72,8 @@ public class SentManager : MonoBehaviour
         Sentence temp10 = new Sentence();
         temp10.strEngSentence = "Hope to see you again"; temp10.strKorSentence = "또 봤으면 좋겠다.";
         myDict.Add(temp10);
+
+        GameObject.Find("GameState").GetComponent<GameState>().GameStart();
     }
 
 

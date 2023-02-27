@@ -46,6 +46,7 @@ public class HpBar : MonoBehaviour
     private void GameOver()
     {
         // 게임 오버 처리
+        GameObject.Find("GameState").GetComponent<GameState>().GameOver();
     }
 
 
