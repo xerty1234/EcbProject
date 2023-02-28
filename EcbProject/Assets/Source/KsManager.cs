@@ -76,13 +76,10 @@ public class KsManager : MonoBehaviour
 
     public void nextWord()
     {
-        Debug.Log("arrStrs.Length: " + arrStrs.Length);
-        Debug.Log("iStrIndex: " + iStrIndex);
-
         if(arrStrs.Length == iStrIndex) 
         {
             EmpHpBar.GetComponent<HpBar>().TakeDamage(10);
-            GameObject.Find("TestButton").GetComponent<TestButton>().clickButton();
+            GameObject.Find("SentManager").GetComponent<SentManager>().nextSent();
         }
         else 
         {
@@ -115,6 +112,31 @@ public class KsManager : MonoBehaviour
 
         string [] strWrong = {"I","have","usual","changed","now"};
 
+        string [] strWrog2 = {"",""};
+
+        // 오답을 정하는 부분
+        for(int i=0; i<strWrong.Length; i++) 
+        {
+            int iRandIndex = Random.Range(0, strWrong.Length);
+
+            if(correctText != strWrong[iRandIndex]) 
+            {
+                if(strWrog2[0] != strWrong[iRandIndex] && strWrog2[1] != strWrong[iRandIndex])
+                {
+                    if(strWrog2[0] == "")
+                    {
+                        strWrog2[0] = strWrong[iRandIndex];
+                    }
+                    else 
+                    {
+                        strWrog2[1] = strWrong[iRandIndex];
+                    }
+                }
+            }
+        }
+
+        int iWrong2Index = 0;
+
         for (int i=0; i<arrbuttonTextMeshs.Count; i++)
         {
             if(i == iCorrectIndex) 
@@ -124,70 +146,14 @@ public class KsManager : MonoBehaviour
             }
             else 
             {
-                int iRandomIndex = Random.Range(0, strWrong.Length );
-
-                if(correctText == strWrong[iRandomIndex]) 
-                {
-                    if(iRandomIndex < strWrong.Length)
-                    {
-                        arrbuttonTextMeshs[i].text = "" + (i+1) + "." + strWrong[iRandomIndex+1];
-                        arrGameObject[i].GetComponent<WordButton>().setQuestion("오답");
-                    }
-                    else 
-                    {
-                        arrbuttonTextMeshs[i].text = "" + (i+1) + "." + strWrong[iRandomIndex-1];
-                        arrGameObject[i].GetComponent<WordButton>().setQuestion("오답");
-                    }                        
-                }
-                else
-                {
-                    arrbuttonTextMeshs[i].text = "" + (i+1) + "." + strWrong[iRandomIndex];
-                    arrGameObject[i].GetComponent<WordButton>().setQuestion("오답");
-                }
-                
+               arrbuttonTextMeshs[i].text = "" + (i+1) + "." + strWrog2[iWrong2Index];
+               arrGameObject[i].GetComponent<WordButton>().setQuestion("오답");
+               iWrong2Index++;
             }
 
         }
 
       
-
-    }
-
-
-    public void createWordButton(int x, int y, string word) 
-    {
-        /*
-          // 버튼 생성
-        GameObject buttonObject = Instantiate(buttonPrefab,Vector3.zero, Quaternion.identity);
-        
-        //캔버스를 부모로 설정해주는 부분 이 문장을 넣어야 canvars 위치값으로 설정이 가능하다.
-        buttonObject.transform.SetParent(transform);
-
-        RectTransform rectTransform = buttonObject.GetComponent<RectTransform>();
-         // 크기 변경을 위힌 Vector2 선언
-        Vector2  currentSize;
-        currentSize = rectTransform.sizeDelta;
-        currentSize.x = 860;
-        currentSize.y = 100;
-        //currentSize.x = x;
-        //currentSize.y = y;
-
-       rectTransform.sizeDelta = currentSize;
-
-        // 버튼 위치, 크기, 텍스트 등 설정
-        buttonObject.transform.localPosition = new Vector3(x, y, 0);
-        buttonObject.transform.localScale = new Vector3(1, 1, 1);
-
-       //GameObject wordText = buttonObject.Find("WordText");
-        // KsText에 텍스트를 변경하기 위한 컴보넌트를 가져오는 부분
-
-        Debug.Log("word: " + word);
-
-       TextMeshProUGUI resourceText =  buttonObject.transform.Find("wordText").GetComponent<TextMeshProUGUI>();       
-       //TextMeshProUGUI resourceText = buttonObject.GetComponent<TextMeshProUGUI>();
-       // 텍스트를 변경
-       resourceText.text = word;
-       */
 
     }
 

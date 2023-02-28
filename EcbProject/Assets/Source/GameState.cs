@@ -33,7 +33,7 @@ public class GameState : MonoBehaviour
         GameObject.Find("EmpHpBar").GetComponent<HpBar>().Heal(100);
         GameObject.Find("MyHpBar").GetComponent<HpBar>().Heal(100);
 
-        GameObject.Find("TestButton").GetComponent<TestButton>().initGamePlay();
+        GameObject.Find("SentManager").GetComponent<SentManager>().initGamePlay();
      
     }
 
