@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class SentManager : MonoBehaviour
 {
+
+   public GameObject ksManager;
+
+
     public class Sentence
     {
         public string strEngSentence;
         public string strKorSentence; 
     }
 
-      public List<Sentence> myDict = new List<Sentence>();
+    int iListSize = 0;
+
+    public List<Sentence> myDict = new List<Sentence>();
+    public List<Sentence> myList;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +79,43 @@ public class SentManager : MonoBehaviour
         Sentence temp10 = new Sentence();
         temp10.strEngSentence = "Hope to see you again"; temp10.strKorSentence = "또 봤으면 좋겠다.";
         myDict.Add(temp10);
+
+        GameObject.Find("GameState").GetComponent<GameState>().GameStart();
+    }
+
+
+    public void settingSentence () 
+    {
+        if(iListSize <= 0) 
+        {
+            myList = new List<Sentence> (getSentence() );
+            iListSize = myList.Count;
+        }   
+    }
+
+     public void initGamePlay()
+    {
+        iListSize = 0;
+        myList = new List<Sentence> (getSentence());
+        
+        ksManager.GetComponent<KsManager>().setttingKs(myList[0].strKorSentence);
+        ksManager.GetComponent<KsManager>().settingWord(myList[0].strEngSentence);
+
+        myList.RemoveAt(0);
+        iListSize = myList.Count;
+    }
+
+     public void nextSent()
+    {
+    
+        settingSentence(); 
+
+        ksManager.GetComponent<KsManager>().setttingKs(myList[0].strKorSentence);
+        ksManager.GetComponent<KsManager>().settingWord(myList[0].strEngSentence);
+
+        myList.RemoveAt(0);
+        iListSize = myList.Count;
+        
     }
 
 

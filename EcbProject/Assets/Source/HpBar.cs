@@ -19,7 +19,7 @@ public class HpBar : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             currentHealth = 0;
             GameOver();
@@ -46,6 +46,7 @@ public class HpBar : MonoBehaviour
     private void GameOver()
     {
         // 게임 오버 처리
+        GameObject.Find("GameState").GetComponent<GameState>().GameOver();
     }
 
 

@@ -11,5 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/EcbProject.unity
     guid: 2a3cb24a11bbdfb4da25cfb218f29112
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: bf60e5a3041fe754f916268ced917afe, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 4946ecea17e36b849ac35bd4843e079d, type: 2}
   m_UseUCBPForAssetBundles: 0

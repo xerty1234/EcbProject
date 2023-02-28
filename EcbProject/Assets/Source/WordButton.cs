@@ -22,7 +22,6 @@ public class WordButton : MonoBehaviour
 
     public void setQuestion (string str) 
     {   
-        Debug.Log("str: " + str);
         strQuestion = str;
     }
 
@@ -34,11 +33,11 @@ public class WordButton : MonoBehaviour
     public void clickEvent ()
     {
 
-        Debug.Log("clickEvent: " + strQuestion);
         if(strQuestion == "정답")
         {
             // 넥스트 문제
-            EmpHpBar.GetComponent<HpBar>().TakeDamage(10);
+            //EmpHpBar.GetComponent<HpBar>().TakeDamage(10);
+            GameObject.Find("KsManager").GetComponent<KsManager>().nextWord();
         }
         else 
         {

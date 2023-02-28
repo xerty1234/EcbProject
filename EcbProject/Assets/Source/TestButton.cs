@@ -43,7 +43,6 @@ public class TestButton : MonoBehaviour
         myList.RemoveAt(0);
         iListSize = myList.Count;
         
-       
     }
 
     public void settingSentence () 
@@ -55,7 +54,17 @@ public class TestButton : MonoBehaviour
         }   
     }
 
+    public void initGamePlay()
+    {
+        iListSize = 0;
+        myList = new List<SentManager.Sentence> (GameObject.Find("gameObjSentManager").GetComponent<SentManager>().getSentence());
+        
+        ksManager.GetComponent<KsManager>().setttingKs(myList[0].strKorSentence);
+        ksManager.GetComponent<KsManager>().settingWord(myList[0].strEngSentence);
 
+        myList.RemoveAt(0);
+        iListSize = myList.Count;
+    }
 
 
 }
